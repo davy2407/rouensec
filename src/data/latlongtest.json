@@ -8,5 +8,10 @@
         "name": "CHU Rouen",
         "lat": 49.438690,
         "lng": 1.111296
+    },
+    {
+        "name": "Hotel De Police",
+        "lat": 49.434611,
+        "lng": 1.079821
     }
   ]}
