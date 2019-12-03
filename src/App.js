@@ -3,12 +3,13 @@ import ReactMapGL, {Marker, Popup} from "react-map-gl";
 import * as latlng from "./data/latlongtest.json";
 
 
+
 function App() {
 const [viewport, setViewport] = useState({
   latitude : 49.4431,
   longitude : 1.0993,
   width : "100vw",
-  height : "100vh",
+  height : "50vh",
   zoom : 10
 });
 
@@ -22,7 +23,15 @@ useEffect(() => {
   window.addEventListener("keydown",listener);
 },[]);
   return (
-    <div className="App">
+    <div className="RouenSec">
+    
+          <div className="Container">
+            <h1>Titre</h1>
+            <p>BLabakbakbakblzdhffuzbjvjzbuofzehojzlenfklnuiefguzkejfjbzysfkfjvnjezdjbvdbvhbzyegfbdkhbvkb</p>
+
+
+          </div>
+          <div className="App">
       <ReactMapGL {...viewport}
       mapboxApiAccessToken="pk.eyJ1IjoiZGF2eTI0MDciLCJhIjoiY2szb2N5NXpjMWpibTNucXhqY2hzdnczZSJ9.iCSTSNxMJ4purLDyJht0zA"
       mapStyle="mapbox://styles/davy2407/ck3odefkl05e11cmj7dxg5wj8"
@@ -64,6 +73,17 @@ useEffect(() => {
 
       </ReactMapGL>
       
+    </div>
+
+    <div className= "ListeRisques">
+
+      <ul>
+        <li>Risques industrielles</li>
+        <li>Propreté</li>
+        <li>Insécurité</li>
+      </ul>
+    </div>
+
     </div>
   );
 }
