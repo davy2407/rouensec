@@ -22,6 +22,11 @@ useEffect(() => {
   };
   window.addEventListener("keydown",listener);
 },[]);
+
+  
+
+
+
   return (
     <div className="RouenSec">
     
@@ -31,7 +36,10 @@ useEffect(() => {
 
 
           </div>
-          <div className="App">
+          <div className="App" id="MapRouen" onMouseEnter = {(e) => {
+            e.preventDefault();
+            alert('vous survolez la carte');
+          }}>
       <ReactMapGL {...viewport}
       mapboxApiAccessToken="pk.eyJ1IjoiZGF2eTI0MDciLCJhIjoiY2szb2N5NXpjMWpibTNucXhqY2hzdnczZSJ9.iCSTSNxMJ4purLDyJht0zA"
       mapStyle="mapbox://styles/davy2407/ck3odefkl05e11cmj7dxg5wj8"
