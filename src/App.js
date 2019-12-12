@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ReactMapGL, {Marker, Popup} from "react-map-gl";
 import Form from "./components/Form";
+
 import * as latlng from "./data/latlongtest.json";
 
 
@@ -81,7 +82,7 @@ useEffect(() => {
       }}
       onDblClick={handleClick}
       onClick ={()=>{
-        console.log(marqueurUtilisateur);
+        
       }}
       >
         <Form onRechercheAdd={handleAdd}/>
