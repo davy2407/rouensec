@@ -1,43 +1,9 @@
 {"markers" : [
-    {
-        "name": "Lubrizol",
-        "lat": 49.436361,
-        "lng": 1.058308
-    },
-    {
-        "name": "CHU Rouen",
-        "lat": 49.438690,
-        "lng": 1.111296
-    },
-    {
-        "name": "Hotel De Police",
-        "lat": 49.434611,
-        "lng": 1.079821
-    },
+   
+    
     {
         "name": "Normandie Web School",
         "lat": 49.428504,
         "lng": 1.065883
-    },
-    {
-        "name": "Rubis Terminal",
-        "lat": 49.428441,
-        "lng": 1.043402
-
-    },
-    {
-        "name": "GPN",
-        "lat": 49.422814,
-        "lng": 1.033910
-    },
-    {
-        "name": "Butagaz",
-        "lat": 49.378395,
-        "lng": 1.010977
-    },
-    {
-        "name": "BASF",
-        "lat": 49.308032,
-        "lng": 1.004291
     }
   ]}

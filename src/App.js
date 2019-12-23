@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import ReactMapGL, {Marker, Popup} from "react-map-gl";
+import ReactMapGL, {Marker as MarkerTest, Popup as Test1} from "react-map-gl";
+import MyVerticallyCenteredModal from './components/Modal';
 import Form from "./components/Form";
 
 import * as latlng from "./data/latlongtest.json";
@@ -65,6 +66,9 @@ useEffect(() => {
   window.addEventListener("keydown",listener);
 },[]);
 
+
+const [modalShow, setModalShow] = React.useState(false);
+
   
 
 
@@ -75,19 +79,21 @@ useEffect(() => {
           
           <div className="App"  >
       <ReactMapGL {...viewport}
-      mapboxApiAccessToken="pk.eyJ1IjoiZGF2eTI0MDciLCJhIjoiY2szb2N5NXpjMWpibTNucXhqY2hzdnczZSJ9.iCSTSNxMJ4purLDyJht0zA"
+      mapboxApiAccessToken = {process.env.REACT_APP_MAPBOX_TOKEN}
       mapStyle="mapbox://styles/davy2407/ck3odefkl05e11cmj7dxg5wj8"
       onViewportChange = {(viewport) => {
         setViewport(viewport);
       }}
       onDblClick={handleClick}
-      onClick ={()=>{
-        
-      }}
+      onClick={() => setModalShow(true)}
       >
+        <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
         <Form onRechercheAdd={handleAdd}/>
         {latlng.markers.map((pointR)=> (
-          <Marker name={pointR.name} latitude={pointR.lat} longitude={pointR.lng}>
+          <MarkerTest name={pointR.name} latitude={pointR.lat} longitude={pointR.lng}>
             <button className="marker-btn" onClick= {(e)=> {
               e.preventDefault();
               setSelectedPoint(pointR)
@@ -96,22 +102,22 @@ useEffect(() => {
 
             </button>
 
-          </Marker>
+          </MarkerTest>
           
         ))}
         {marqueurUtilisateur.map((test)=> (
-          <Marker name="test" latitude={test.lat} longitude={test.lng}>
+          <MarkerTest name="test" latitude={test.lat} longitude={test.lng}>
             <button className="marker-btn" onClick= {(e)=> {
               e.preventDefault();
               setSelectedPoint(test)
             }}>
               <img src="/Map_marker.svg" alt="Marker Icon"/>
             </button>
-          </Marker>
+          </MarkerTest>
         ))}
 
         {selectedPoint ? (
-          <Popup 
+          <Test1 
           latitude={selectedPoint.lat} 
           longitude={selectedPoint.lng}
           onClose={() => {
@@ -122,7 +128,7 @@ useEffect(() => {
 
             </div>
 
-          </Popup>
+          </Test1>
 
         ) : null}
 
