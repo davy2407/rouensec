@@ -42,7 +42,7 @@ const handleAdd = recherche => {
 
 };
 
-const handleClick = event =>{
+const handleClick = async event =>{
   
   const newMarqueurUtilisateur = {name : "test" ,lng : event.lngLat[0],lat : event.lngLat[1]};
   const updatedMarqueurUtiliasateur = [...marqueurUtilisateur];
@@ -85,7 +85,9 @@ const [modalShow, setModalShow] = React.useState(false);
         setViewport(viewport);
       }}
       onDblClick={handleClick}
-      onClick={() => setModalShow(true)}
+      onClick={(event)=> {setModalShow(true);
+                      handleClick(event);}}
+      
       >
         <MyVerticallyCenteredModal
         show={modalShow}
